@@ -46,8 +46,22 @@
 
 
 
+# 文件与文件系统的压缩，打包和备份
+* 1字节Byte = 8位bits
+* 常见的压缩文件拓展名，这些程序默认不保留原来的文件
+> gzip file 压缩文件
+> 
+> gunzip file.gz 解压文件
+>
+> zmore file.gz 查看压缩文件内容
+>
+> zgrep file.gz 搜索压缩文件内容中的字符串
 
-
+* 为什么tar打包？是因为有的压缩程序（gz,bz2,xz）只能压缩一个文件，打包就能将多个文件弄成一个，然后压缩
+> tar
+> 
+> 解压：tar -xzvf file.tzr.gz
+> 
 
 
 
