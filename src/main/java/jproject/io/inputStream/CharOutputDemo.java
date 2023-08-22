@@ -11,18 +11,9 @@ public class CharOutputDemo {
     static String fileE = "/home/rui/Videos/e.txt";
     static String fileF = "/home/rui/Videos/f.txt";
     public static void main(String[] args) throws IOException {
-//        Writer wout = new OutputStreamWriter(new FileOutputStream(fileF),StandardCharsets.UTF_16);
-//        wout.write(50);
-//        wout.flush();
-
-        // 文本格式输出,用的是追加的方式，那么输出流和文件的编码方式要一致，否则出现乱码，如果是替换，那么新文件的编码就是输出流的编码
-        PrintStream pout = new PrintStream(new FileOutputStream(fileF,true),true,"UTF-8");
-        pout.write(48);
-        pout.write(49);
-        pout.write(50);
-        pout.print("ok");
-
-//        pout.append("53");
+        PrintStream pout = new PrintStream(fileA,"UTF-16");
+        pout.print("你好woshi");
+        pout.flush();
     }
 
 }

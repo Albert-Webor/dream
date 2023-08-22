@@ -75,7 +75,36 @@ _>> 为啥读的字节打印出来是0～255,不是说字节的范围是-128～1
 > 文本输出：PrintStream,用print方法输出文本
 > 
 
+# 日期时间类
+### 本地日期类,应该叫主机日期
+LocalDate类
+> LocalDate.now(),返回当前日期：yyyy-mm-dd
+> 
+> LocalDate.of(params),构造自己的日期，参数是年月日
+> 
+> 某个日期加上年/月/日后的日期为：成员方法：plusXXX();返回加上后的日期,对应的减法：minusXXX();
+> 
+> 替换日期中的年/月/日： 成员方法：withXXX();
+> 
+> 查看日期是星期几：成员方法：getDayOfWeek(); 
+> 
+> 查看日期是该月的第几天：getDayOfMonth();
+> 
+> 查看日期是该年的第几天：getDayOfYear();
+> 
+> TemporalAdjusters 较为复杂的日期调整器，比如计算某个月的第1个星期2,就不介绍了
 
+### 本地时间类，应该叫主机时间
+LocalTime类，用法和LocalDate及其相似
+> now()返回当前时间格式，最后三位是纳秒：HH:MM:SS.mmm
+>
+### 本地日期时间类：LocalDateTime
+## 时区时间
+ZonedDateTime
+全球大概几百个时区，比如上海的时区：Asia/Shanghai
+### 日期时间格式化解析
+DateTimeFormatter 类
+> 类里面预定义了很多的格式
 
 
 

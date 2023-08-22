@@ -16,20 +16,13 @@ public class CharInputDemo {
     static String fileF = "/home/rui/Videos/f.txt";
 
     public static void main(String[] args) throws IOException {
-        char[] a = new char[14];
-        //基础
-        FileInputStream in = new FileInputStream(fileF);
+        Reader aio = new InputStreamReader(new FileInputStream(fileA));
+        Reader bio = new BufferedReader(new InputStreamReader(new FileInputStream(fileB)));
+        Scanner sio = new Scanner(new FileInputStream(fileC));
+        RandomAccessFile rio = new RandomAccessFile(fileD,"rw");
 
-        //Unicode码元单位
-        Reader reader = new InputStreamReader(in,StandardCharsets.UTF_16BE);
-        reader.read(a);
-        for(char c : a)
-            System.out.println(c);
-
-        //常见的
-//        Scanner scanner = new Scanner(in,"UTF-16BE");
-//
-//        while (scanner.hasNext())
-//            System.out.println(scanner.nextLine());
+        while(aio.ready()){
+            System.out.println(aio.read());
+        }
     }
 }
