@@ -1,17 +1,14 @@
 package jproject.network;
 
 import java.io.*;
-import java.net.Inet6Address;
-import java.net.InetAddress;
 import java.net.Socket;
-import java.util.Scanner;
 
-public class A {
+public class CustomOne {
     public static void main(String[] args) throws IOException {
-        Socket post = new Socket("127.0.0.1",8189);
-        post.setSoTimeout(10000); // 设置超时时间
-        InputStream inputStream = post.getInputStream();
-        OutputStream out = post.getOutputStream();
+        Socket socket = new Socket("127.0.0.1",8189);
+        socket.setSoTimeout(10000); // 设置超时时间
+        InputStream inputStream = socket.getInputStream();
+        OutputStream out = socket.getOutputStream();
         boolean flg =true;
         while(flg){
             InputStream io = System.in;
