@@ -1,4 +1,4 @@
-package V8.bean;
+package pojo.v8_bean.servicetype;
 /*
 * 等同于ServiceType文件中的子服务
 * */

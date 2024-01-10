@@ -23,7 +23,7 @@ public class StringUtil {
 
 
     /*
-   * 判断字符串中是否存在子串
+   * 判断字符串中是否存在子串,并返回第一次出现子串的位置
    @param1 subString 子串
    @param2 supString 母串
    @return 不存在返回：-1，存在则返回在母串中的位置(0是首字符位置)
@@ -49,6 +49,20 @@ public class StringUtil {
         }
         return -1;
     }
+
+    /*
+    * 从母串指定位置开始向后查,子串第一次出现的位置
+    * @return 不存在返回：-1，存在则返回在母串中的位置(0是首字符位置)
+    * */
+    public static int chkExistsStrIndex(String subStr,String supStr,int beg){
+        int firIndex = chkExistsStr(subStr,supStr.substring(beg));
+        if(firIndex == -1)
+            return -1;
+        else
+            return firIndex + beg;
+    }
+
+
     /*
 * 查询子串在母串中的个数,以及每次出现的位置
 @forexample “111”在"111111"这种算两次，111在11111，这种算1次

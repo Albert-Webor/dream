@@ -1,4 +1,4 @@
-package V8.bean;
+package pojo.v8_bean.servicetype;
 
 import java.util.ArrayList;
 
