@@ -5,25 +5,18 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
 import pojo.excel.ExcelDetailObj;
 
 import java.io.*;
+import java.nio.file.Path;
 
 public class ExcelUtils {
     /*
     * 生成一个空的Excel文件
     * */
-    public static void createEmptyExcelFile(String dir){
-        Workbook workbook = null;
-        try(OutputStream out = new FileOutputStream(dir)){
-            workbook = new XSSFWorkbook();
-            workbook.write(out);
-            workbook.close();
-        }catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public static void createEmptyExcelFile(String dir) throws IOException {
+
     }
 
     /*
@@ -52,7 +45,17 @@ public class ExcelUtils {
     }
 
     public static void main(String[] args) throws IOException {
-        ExcelUtils.createExcelFile();
+        FileInputStream io = new FileInputStream("C:\\Users\\pc\\Documents\\SCB人员名单.xlsx");
+        Workbook workbook = XSSFWorkbookFactory.createWorkbook(io);
+        Sheet sheet = workbook.getSheetAt(0);
+        int lastNum =sheet.getLastRowNum();
+        for(int i=0;i<=lastNum;i++){
+            System.out.println(sheet.getRow(i).getCell(0).getStringCellValue());
+            File file = new File("C:\\Users\\pc\\Documents\\"+"22\\"+sheet.getRow(i).getCell(0).getStringCellValue());
+            file.mkdir();
+        }
+
+
     }
 
 }
