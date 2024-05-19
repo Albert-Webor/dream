@@ -1,9 +1,4 @@
-# note目录是学习笔记
-## dream
-### dream 
-#### dream 
-##### dream
-###### dream
+
 * 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
 * 无序列表
 + 奥斯卡奖和
